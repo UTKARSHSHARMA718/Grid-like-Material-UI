@@ -1,0 +1,11 @@
+.container{
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.gridView{
+    background-color: rgb(231, 255, 247);
+    padding: 16px;
+}

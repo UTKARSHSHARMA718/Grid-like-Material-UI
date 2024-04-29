@@ -1,0 +1,18 @@
+.headingContainer {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.subHeading {
+  font-size: 24px;
+  font-weight: 600;
+}

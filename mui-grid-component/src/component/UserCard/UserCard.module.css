@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 10px grey;
+  max-width: fit-content;
+  background-color: aliceblue;
+}
+
+.infoContainer {
+  padding: 4px 8px;
+  background-color: bisque;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info {
+  font-weight: 500;
+  font-size: 18px;
+  color: brown;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
