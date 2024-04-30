@@ -1,4 +1,4 @@
-import React, { Ref, useState } from "react";
+import React, { useState } from "react";
 
 import GridItems from "../GridItems/GridItems";
 import GridContextProvider from "../../../context/GridContext/GridContextProvider";

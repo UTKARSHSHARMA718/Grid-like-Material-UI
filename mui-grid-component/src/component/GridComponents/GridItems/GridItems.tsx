@@ -9,13 +9,13 @@ const GridItems: React.FC<GridItemsProps> = ({ children, xs, sm, md, lg, xl }) =
   const { gap, containerRef } = useContext(GridContext);
   const { currentNumCols } = useColsAccordingBreakPoints({ xs, sm, md, lg, xl });
   const oneColValue = Number(containerRef?.clientWidth) / 8;
-
   const [classes, setClasses] = useState({
     flex: currentNumCols,
     maxWidth: 100,
     minWidth: 100,
   })
   const updateMaxMinWidth = throttle(() => {
+    // TODO: maxWidth are not getting updated 
     setClasses({
       flex: currentNumCols,
       maxWidth: oneColValue * currentNumCols,
@@ -24,7 +24,6 @@ const GridItems: React.FC<GridItemsProps> = ({ children, xs, sm, md, lg, xl }) =
   })
 
   useEffect(() => {
-    updateMaxMinWidth();
     window?.addEventListener('resize', updateMaxMinWidth)
     return () => {
       window?.removeEventListener('resize', updateMaxMinWidth)

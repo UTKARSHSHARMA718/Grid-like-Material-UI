@@ -21,18 +21,19 @@ const useColsAccordingBreakPoints = ({
 
   const getColsAccordingBreakPoints = () => {
     const { width } = windowSize;
-
+    let breakPoint = 0;
     if (width < 600) {
-      return setCurrentNumCols(xs);
+      breakPoint = xs;
     } else if (width >= 600 && width < 900) {
-      return setCurrentNumCols(sm);
+      breakPoint = sm;
     } else if (width >= 900 && width < 1200) {
-      return setCurrentNumCols(md);
+      breakPoint = md;
     } else if (width >= 1200 && width < 1536) {
-      return setCurrentNumCols(lg);
+      breakPoint = lg;
     } else {
-      return setCurrentNumCols(xl);
+      breakPoint = xl;
     }
+    setCurrentNumCols(breakPoint);
   };
 
   useEffect(() => {

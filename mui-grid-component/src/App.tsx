@@ -13,7 +13,7 @@ function App() {
         subHeading="Data of great people"
       />
       <div className={styles.gridView}>
-        <Grid container>
+        <Grid container gap={32}>
           {
             USER_DUMMY_DATA?.map((user, index) => {
               return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
