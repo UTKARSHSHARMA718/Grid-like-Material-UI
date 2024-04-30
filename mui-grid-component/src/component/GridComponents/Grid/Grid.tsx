@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import GridItems from "../GridItems/GridItems";
 import GridContextProvider from "../../../context/GridContext/GridContextProvider";
 import { GridProps } from "./Grid.types";
 import styles from "./Grid.module.css";
 
-const Grid:React.FC<GridProps> = ({
+const Grid: React.FC<GridProps> = ({
   children,
   container,
   item,
@@ -13,23 +13,28 @@ const Grid:React.FC<GridProps> = ({
   cols = 8,
   wrap = "wrap",
 }) => {
+  const containerRef = useRef();
   const classes = {
     columnGap: gap,
     rowGap: gap,
     flexWrap: wrap,
   };
 
-  if (item && !container) {
-    return <GridItems cols={cols}>{children}</GridItems>;
-  }
-
   if (container && !item) {
     return (
       <GridContextProvider gap={gap}>
-        <div style={classes} className={styles.container}>
+        <div style={classes} className={styles.container} ref={containerRef}>
           {children}
         </div>
       </GridContextProvider>
+    );
+  }
+
+  if (item && !container) {
+    return (
+      <GridItems cols={cols} {...{ containerRef }}>
+        {children}
+      </GridItems>
     );
   }
 
