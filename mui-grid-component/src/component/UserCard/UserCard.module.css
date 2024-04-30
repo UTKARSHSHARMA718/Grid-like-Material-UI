@@ -29,3 +29,17 @@
   height: 200px;
   border-radius: 50%;
 }
+
+@media (max-width: 1200px) {
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .img {
+    width: 80px;
+    height: 80px;
+  }
+}

@@ -16,7 +16,7 @@ function App() {
         <Grid container>
           {
             USER_DUMMY_DATA?.map(user => {
-              return <Grid item key={user?.address} cols={1}>
+              return <Grid item key={user?.address} cols={2}>
                 <UserCard data={user} />
               </Grid>
             })

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { Ref, useState } from "react";
 
 import GridItems from "../GridItems/GridItems";
 import GridContextProvider from "../../../context/GridContext/GridContextProvider";
@@ -13,7 +13,7 @@ const Grid: React.FC<GridProps> = ({
   cols = 8,
   wrap = "wrap",
 }) => {
-  const containerRef = useRef();
+  const [containerRef, setContainerRef] = useState<Ref<HTMLDivElement>>(null);
   const classes = {
     columnGap: gap,
     rowGap: gap,
@@ -21,9 +21,10 @@ const Grid: React.FC<GridProps> = ({
   };
 
   if (container && !item) {
+    console.log("inside container", { containerRef, val: containerRef?.clientWidth })
     return (
-      <GridContextProvider gap={gap}>
-        <div style={classes} className={styles.container} ref={containerRef}>
+      <GridContextProvider gap={gap} containerRef={containerRef}>
+        <div id="grid-container" style={classes} className={styles.container} ref={(refValue) => setContainerRef(refValue)}>
           {children}
         </div>
       </GridContextProvider>
