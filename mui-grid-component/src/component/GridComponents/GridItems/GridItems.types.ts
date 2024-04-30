@@ -2,6 +2,10 @@ import React from "react";
 
 export interface GridItemsProps {
   children: React.ReactNode;
-  cols: number;
-  containerRef: React.Ref<HTMLDivElement>;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  containerRef: HTMLDivElement | null;
 }

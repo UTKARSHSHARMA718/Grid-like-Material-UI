@@ -3,5 +3,7 @@ import React from "react";
 export interface GridContextProps {
   children: React.ReactElement;
   gap: number;
-  containerRef: React.Ref<HTMLDivElement>;
+  containerRef: HTMLDivElement | null;
 }
+
+export type GridContextValue = Omit<GridContextProps, "children">;

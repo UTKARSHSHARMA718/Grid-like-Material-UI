@@ -15,8 +15,57 @@ function App() {
       <div className={styles.gridView}>
         <Grid container>
           {
-            USER_DUMMY_DATA?.map(user => {
-              return <Grid item key={user?.address} cols={2}>
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
+                <UserCard data={user} />
+              </Grid>
+            })
+          }
+          {
+            USER_DUMMY_DATA?.map((user, index) => {
+              return <Grid item key={user?.address} xs={8} sm={4} md={4} lg={3} xl={2}>
                 <UserCard data={user} />
               </Grid>
             })
